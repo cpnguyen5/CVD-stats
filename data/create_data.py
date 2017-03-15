@@ -16,4 +16,7 @@ def read_frmgham():
     # Create DataFrame
     df = pd.read_csv(data_path)
     df['SEX'].replace(to_replace={1:'male', 2:'female'}, inplace=True)
+
+    # Change column casing
+    df.columns = [x.lower() for x in df.columns]
     return df
